@@ -35,6 +35,16 @@ Add the following code to your main activity's `onCreate()` method:
 
 Add the following code to your main activity's `Class` outside `onCreate()` method:
 ```
+ @Override
+public void onBackPressed() {
+        if(webView.isFocused() && webView.canGoBack())
+        {
+            webView.goBack();
+        }else{
+            super.onBackPressed();
+        }
+}
+
 private class MywebClient extends WebViewClient{
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -44,17 +54,9 @@ private class MywebClient extends WebViewClient{
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
             return super.shouldOverrideUrlLoading(view, request);
         }
-    }
+}
 
-    @Override
-    public void onBackPressed() {
-        if(webView.isFocused() && webView.canGoBack())
-        {
-            webView.goBack();
-        }else{
-            super.onBackPressed();
-        }
-    }
+   
 ```
 
 
