@@ -2,8 +2,8 @@
 Converting a website to an Android WebView app can be done using the following steps:
 
 ## Getting Started
-1. Clone this repository to your local machine.
-2. Open the project in Android Studio.
+1. Install android studio
+2. Create new project
 3. Add a WebView component to your project's layout file. You can do this by adding the following code to your XML layout file:
 
 ```
